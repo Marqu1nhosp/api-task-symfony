@@ -75,8 +75,8 @@ API RESTful desenvolvida com Symfony 6.4 e API Platform para gerenciamento de us
 1. Clone o repositório
 
 ```bash
-git clone https://seu-repositorio.git
-cd nome-do-projeto
+git clone https://github.com/Marqu1nhosp/api-task-symfony/
+cd api-task-symfony
 ```
 
 2. Instale as dependências
@@ -102,6 +102,7 @@ openssl genrsa -out config/jwt/private.pem -aes256 4096
 openssl rsa -pubout -in config/jwt/private.pem -out config/jwt/public.pem
 ```
 6. Execute o servidor
+
 ```bash
 symfony server
 ```
