@@ -1,0 +1,130 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body, html {
+  height: 100%;
+  background: linear-gradient(135deg, #1e2a38, #12181f);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #eee;
+}
+
+.login-form {
+  background-color: #242f3e;
+  padding: 2.5rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.login-form:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
+}
+
+.login-form h1 {
+  margin-bottom: 1.8rem;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+  color: #8ab4f8;
+}
+
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #cfd8dc;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  margin-bottom: 1.3rem;
+  border-radius: 8px;
+  border: 1px solid #3a4759;
+  background-color: #1f2a3d;
+  color: #eee;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+  color: #657a94;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #8ab4f8;
+  outline: none;
+  box-shadow: 0 0 8px #8ab4f8;
+}
+
+input[type="checkbox"] {
+  margin-right: 0.5rem;
+  transform: scale(1.15);
+  cursor: pointer;
+}
+
+.remember-me {
+  text-align: left;
+  font-size: 0.9rem;
+  color: #a0aec0;
+  margin-bottom: 1.8rem;
+  user-select: none;
+  display: flex;
+  align-items: center;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #4a90e2, #357ABD);
+  border: none;
+  width: 100%;
+  padding: 0.85rem 0;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.15s ease;
+  box-shadow: 0 4px 10px rgba(69, 142, 255, 0.6);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(90deg, #357ABD, #4a90e2);
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(69, 142, 255, 0.85);
+}
+
+.alert-danger {
+  background-color: #d93025;
+  color: white;
+  padding: 0.9rem 1.1rem;
+  border-radius: 6px;
+  margin-bottom: 1.4rem;
+  font-weight: 600;
+  box-shadow: 0 0 6px rgba(217, 48, 37, 0.8);
+  text-align: left;
+}
+
+a {
+  color: #8ab4f8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}

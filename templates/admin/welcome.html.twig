@@ -1,0 +1,48 @@
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('styles/welcome.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">Bem-vindo ao Painel Administrativo</h1>
+    <p class="mb-4">Gerencie os recursos da sua aplicação de forma simples e rápida.</p>
+
+    <div class="row">
+        <!-- Card Tarefas -->
+        <div class="col-md-4">
+            <div class="card text-white bg-primary mb-3 shadow">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fa fa-tasks"></i> Gerenciar Tarefas</h5>
+                    <p class="card-text">Visualize, crie e edite as tarefas cadastradas no sistema.</p>
+                   <a href="/admin/task" class="btn btn-light">Ir para Tarefas</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card Usuários -->
+        <div class="col-md-4">
+            <div class="card text-white bg-success mb-3 shadow">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fa fa-user"></i> Gerenciar Usuários</h5>
+                    <p class="card-text">Controle o cadastro e os dados dos usuários do sistema.</p>
+                    <a href="/admin/user" class="btn btn-light">Ir para Usuários</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card Estatísticas (exemplo futuro) -->
+        <div class="col-md-4">
+            <div class="card text-white bg-info mb-3 shadow">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fa fa-chart-bar"></i> Estatísticas</h5>
+                    <p class="card-text">Veja métricas gerais (em breve!).</p>
+                    <a href="#" class="btn btn-light disabled">Em breve</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

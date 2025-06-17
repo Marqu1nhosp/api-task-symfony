@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Login{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('styles/login.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="login-container">
+    <form method="post" class="login-form">
+        <h1 class="h3 mb-3 text-center">Entrar no sistema</h1>
+
+        {% if error %}
+            <div class="alert alert-danger">
+                {{ error.messageKey|trans(error.messageData, 'security') }}
+            </div>
+        {% endif %}
+
+        {% if app.user %}
+            <div class="mb-3 text-center">
+                Você já está logado como {{ app.user.userIdentifier }}.
+                <a href="{{ path('app_logout') }}">Sair</a>
+            </div>
+        {% endif %}
+
+        <div class="mb-3">
+            <label for="inputEmail">E-mail</label>
+            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+        </div>
+
+        <div class="mb-3">
+            <label for="inputPassword">Senha</label>
+            <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+        </div>
+
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+        <div class="mb-3 form-check">
+            <input type="checkbox" name="_remember_me" class="form-check-input" id="rememberMe">
+            <label class="form-check-label" for="rememberMe">Lembrar-me</label>
+        </div>
+
+        <button class="btn btn-primary w-100" type="submit">
+            Entrar
+        </button>
+    </form>
+</div>
+{% endblock %}
