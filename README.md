@@ -1,4 +1,4 @@
-# Nome do Api Task Symfony
+# Api Task Symfony
 
 API RESTful desenvolvida com Symfony 6.4 e API Platform para gerenciamento de usuários e tarefas, com autenticação JWT e painel administrativo.
 
