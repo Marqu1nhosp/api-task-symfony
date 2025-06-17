@@ -25,8 +25,6 @@ API RESTful desenvolvida com Symfony 6.4 e API Platform para gerenciamento de us
 - Autenticação via JWT com login.  
 - CRUD completo para entidades Usuário e Tarefa.  
 - Painel administrativo para gerenciamento de usuários e tarefas.  
-- Configuração CORS para comunicação com frontend.  
-- Testes automatizados com PHPUnit.  
 
 ---
 
