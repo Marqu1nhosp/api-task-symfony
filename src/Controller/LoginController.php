@@ -22,9 +22,11 @@ class LoginController extends AbstractController
     ): JsonResponse {
         $data = json_decode($request->getContent());
 
-        //Verifica se não estão nulos
-        $email = $data->email ?? null;
-        $password = $data->password ?? null;
+       // Verifica se não estão nulos
+       $email = $data->email ?? null;
+       $password = $data->password ?? null;
+
+       $requiredFields = ['name', 'email', 'password', 'roles'];
 
         if (!$email || !$password) {
             return $this->json(['error' => 'E-mail e senha são obrigatórios'], 400);

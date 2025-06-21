@@ -24,16 +24,19 @@ final class ApiRegistrationController extends AbstractController
         $decoded = json_decode($request->getContent());
 
         //Verifica se não estão nulos
-        $name = $decoded->name ?? null;
-        $email = $decoded->email ?? null;
-        $password = $decoded->password ?? null;
-        $roles = $decoded->role ?? null;
+        $fields = ['name', 'email', 'password', 'role'];
+        $data = [];
 
-        $user = new User();
-        $user->setName($name);
-        $user->setEmail($email);
-        $user->setPassword($password);
-        $user->setRoles(['ROLE_USER']);
+        foreach ($fields as $field) {
+            $data[$field] = $decoded->$field ?? null;
+        }
+
+        $user = (new User())
+            ->setName($data['name'])
+            ->setEmail($data['email'])
+            ->setPassword($data['password'])
+            ->setRoles(['ROLE_USER']);
+
 
         // O código valida o objeto $user. Se encontrar erros, 
         // responde com um JSON contendo todos os erros organizados por campo, 
@@ -52,7 +55,7 @@ final class ApiRegistrationController extends AbstractController
         }
 
         // Hash e persistência
-        $hashedPassword = $passwordHasher->hashPassword($user, $password);
+        $hashedPassword = $passwordHasher->hashPassword($user, $data['password']);
         $user->setPassword($hashedPassword);
 
         $entityManager->persist($user);
@@ -61,4 +64,3 @@ final class ApiRegistrationController extends AbstractController
         return $this->json(['message' => 'Registrado com sucesso!']);
     }
 }
-
